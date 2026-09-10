@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="custom.css">
+</head>
+<body>
+
+<button onclick="abrirMenu()">☰</button>
+
+<ul id="menu">
+    <li>
+        <a href="NossaHistoria.html">Nossa Historia</a>
+   </li>
+    <li>
+        <a href="Contatos.html">Contatos</a>
+    </li>
+    <li>
+        <a href="Galeria.html">Nossas fotos</a>
+    </li>
+    <li>
+        <a href="Eventos.html">Eventos</a>
+    </li>
+</ul>
+
+<script>
+function abrirMenu() {
+    const menu = document.getElementById("menu");
+
+    if (menu.style.display === "none") {
+        menu.style.display = "block";
+    } else {
+        menu.style.display = "none";
+    }
+}
+</script>
+</body>
+</html>

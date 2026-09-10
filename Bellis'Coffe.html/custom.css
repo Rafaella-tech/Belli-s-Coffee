@@ -1,0 +1,10 @@
+#menu {
+    display: none;
+    list-style: none;
+    padding: 10px;
+}
+
+#menu li {
+    padding: 10px;
+    cursor: pointer;
+}
