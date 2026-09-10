@@ -1,0 +1,241 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Georgia, 'Times New Roman', serif;
+    background-color: #f8f1e7;
+    color: #3e2723;
+}
+
+
+/* CABEÇALHO */
+
+header {
+    background-color: #3e2723;
+    color: white;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    padding: 20px 50px;
+}
+
+
+/* LOGO */
+
+.logo {
+    font-size: 28px;
+    font-weight: bold;
+    color: #f3dfc1;
+}
+
+
+/* MENU */
+
+nav ul {
+    display: flex;
+    align-items: center;
+    gap: 25px;
+
+    list-style: none;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    font-size: 16px;
+
+    transition: 0.3s;
+}
+
+nav a:hover {
+    color: #d7b899;
+}
+
+
+/* BOTÃO DO MENU */
+
+.menu-botao {
+    display: none;
+
+    background-color: #6f4e37;
+    color: white;
+
+    border: none;
+    border-radius: 8px;
+
+    padding: 10px 15px;
+    font-size: 22px;
+
+    cursor: pointer;
+}
+
+
+/* ÁREA INICIAL */
+
+.inicio {
+    min-height: 500px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    text-align: center;
+
+    background-color: #d7b899;
+
+    padding: 60px 20px;
+}
+
+
+.texto-inicio {
+    max-width: 700px;
+}
+
+
+.subtitulo {
+    font-size: 14px;
+    letter-spacing: 3px;
+    color: #5d4037;
+
+    margin-bottom: 20px;
+}
+
+
+.texto-inicio h1 {
+    font-size: 55px;
+    color: #3e2723;
+
+    margin-bottom: 20px;
+}
+
+
+.texto-inicio h1 span {
+    color: #ffffff;
+}
+
+
+.texto-inicio p {
+    font-size: 18px;
+    line-height: 1.6;
+
+    margin-bottom: 25px;
+}
+
+
+/* BOTÃO */
+
+.botao {
+    display: inline-block;
+
+    background-color: #3e2723;
+    color: white;
+
+    text-decoration: none;
+
+    padding: 15px 25px;
+
+    border-radius: 25px;
+
+    transition: 0.3s;
+}
+
+
+.botao:hover {
+    background-color: #6f4e37;
+
+    transform: translateY(-3px);
+}
+
+
+/* DESTAQUES */
+
+.destaques {
+    padding: 60px 30px;
+
+    text-align: center;
+}
+
+
+.destaques h2 {
+    font-size: 32px;
+
+    margin-bottom: 40px;
+
+    color: #3e2723;
+}
+
+
+/* CARDS */
+
+.cards {
+    display: flex;
+    justify-content: center;
+    align-items: stretch;
+
+    gap: 25px;
+
+    flex-wrap: wrap;
+}
+
+
+.card {
+    background-color: white;
+
+    width: 280px;
+
+    padding: 30px;
+
+    border-radius: 15px;
+
+    box-shadow: 0 5px 15px rgba(62, 39, 35, 0.15);
+
+    transition: 0.3s;
+}
+
+
+.card:hover {
+    transform: translateY(-8px);
+
+    box-shadow: 0 10px 20px rgba(62, 39, 35, 0.25);
+}
+
+
+.icone {
+    font-size: 45px;
+
+    margin-bottom: 15px;
+}
+
+
+.card h3 {
+    color: #5d4037;
+
+    margin-bottom: 15px;
+}
+
+
+.card p {
+    line-height: 1.5;
+
+    color: #6d5a50;
+}
+
+
+/* RODAPÉ */
+
+footer {
+    background-color: #3e2723;
+
+    color: #f3dfc1;
+
+    text-align: center;
+
+    padding: 30px;
+
+    line-height: 1.8;
+}

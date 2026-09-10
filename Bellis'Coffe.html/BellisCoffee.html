@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Belli's Coffee</title>
+
+    <link rel="stylesheet" href="custom.css">
+</head>
+
+<body>
+
+    <header>
+
+        <div class="logo">
+             Belli's Coffee
+        </div>
+
+        <button class="menu-botao" onclick="abrirMenu()">☰</button>
+
+        <nav>
+            <ul id="menu">
+
+                <li>
+                    <a href="index.html">Início</a>
+                </li>
+
+                <li>
+                    <a href="NossaHistoria.html">Nossa História</a>
+                </li>
+
+                <li>
+                    <a href="Cardapio.html">Cardápio</a>
+                </li>
+
+                <li>
+                    <a href="Galeria.html">Nossas Fotos</a>
+                </li>
+
+                <li>
+                    <a href="Eventos.html">Eventos</a>
+                </li>
+
+                <li>
+                    <a href="Contatos.html">Contatos</a>
+                </li>
+
+            </ul>
+        </nav>
+
+    </header>
+
+
+    <main>
+
+        <section class="inicio">
+
+            <div class="texto-inicio">
+
+                <p class="subtitulo">
+                    CAFÉ • SABOR • MOMENTOS
+                </p>
+
+                <h1>
+                    Bem-vindo à<br>
+                    <span>Belli's Coffee</span>
+                </h1>
+
+                <p>
+                    Um cantinho aconchegante para você aproveitar
+                    um bom café, deliciosos doces e momentos especiais.
+                </p>
+
+                <a href="Cardapio.html" class="botao">
+                    Conheça nosso cardápio
+                </a>
+
+            </div>
+
+        </section>
+
+
+        <section class="destaques">
+
+            <h2>Um café feito com carinho</h2>
+
+            <div class="cards">
+
+                <div class="card">
+                    <div class="icone">☕</div>
+                    <h3>Cafés especiais</h3>
+                    <p>
+                        Cafés preparados com muito cuidado
+                        para deixar seu momento ainda melhor.
+                    </p>
+                </div>
+
+                <div class="card">
+                    <div class="icone">🍰</div>
+                    <h3>Doces deliciosos</h3>
+                    <p>
+                        Bolos, tortas e doces perfeitos
+                        para acompanhar seu café.
+                    </p>
+                </div>
+
+                <div class="card">
+                    <div class="icone">🤎</div>
+                    <h3>Ambiente aconchegante</h3>
+                    <p>
+                        Um espaço pensado para você relaxar
+                        e aproveitar cada momento.
+                    </p>
+                </div>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <footer>
+
+        <p>
+            ☕ Belli's Coffee
+        </p>
+
+        <p>
+            Um café para saborear bons momentos.
+        </p>
+
+        <p>
+            © 2026 Belli's Coffee
+        </p>
+
+    </footer>
+
+
+    <script>
+
+        function abrirMenu() {
+
+            const menu = document.getElementById("menu");
+
+            if (menu.style.display === "none") {
+
+                menu.style.display = "flex";
+
+            } else {
+
+                menu.style.display = "none";
+
+            }
+
+        }
+
+    </script>
+
+</body>
+
+</html>
