@@ -1,0 +1,675 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+
+    <title>Belli's Coffee</title>
+
+    <style>
+
+        /* Remove a margem branca padrão do navegador */
+
+        html, body {
+            margin: 0;
+            padding: 0;
+        }
+
+
+        /* Área inteira da avaliação */
+
+.area-avaliacao {
+    position: relative;
+
+    background: rgb(73, 38, 0);
+
+    padding: 100px 20px 70px;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.area-avaliacao::before {
+    content: "";
+
+    position: absolute;
+
+    top: -50px;
+    left: 0;
+
+    width: 100%;
+    height: 100px;
+
+    background: rgb(73, 38, 0);
+
+    border-radius: 50% 50% 0 0;
+
+    z-index: 0;
+}
+
+.titulo-avaliacao,
+.formulario-avaliacao {
+    position: relative;
+    z-index: 1;
+}
+
+        /* Título */
+
+       .titulo-avaliacao {
+    text-align: center;
+    margin-bottom: 35px;
+    margin-top: -30px;
+}
+
+        .titulo-avaliacao span {
+            font-size: 40px;
+        }
+
+        .titulo-avaliacao h2 {
+            color: rgb(255, 243, 230);
+            font-size: 32px;
+            margin: 10px 0;
+        }
+
+        .titulo-avaliacao p {
+            color: rgb(255, 243, 230);
+            font-size: 17px;
+        }
+
+
+        /* Formulário */
+
+        .formulario-avaliacao {
+            background: rgb(255, 243, 230);
+            width: 100%;
+            max-width: 500px;
+
+            padding: 35px;
+
+            border-radius: 20px;
+
+            box-shadow: 0 8px 25px rgba(75, 46, 31, 0.18);
+
+            box-sizing: border-box;
+        }
+
+
+        /* Labels */
+
+        .formulario-avaliacao label {
+            display: block;
+
+            color: #4b2e1f;
+
+            font-weight: bold;
+
+            margin-top: 18px;
+            margin-bottom: 8px;
+        }
+
+
+        /* Inputs */
+
+        .formulario-avaliacao input,
+        .formulario-avaliacao textarea {
+            width: 100%;
+
+            padding: 13px;
+
+            box-sizing: border-box;
+
+            border: 2px solid #dfcbb8;
+
+            border-radius: 10px;
+
+            background: rgb(255, 243, 230);
+
+            color: #4b2e1f;
+
+            font-size: 15px;
+
+            outline: none;
+
+            transition: 0.3s;
+        }
+
+
+        /* Efeito ao clicar */
+
+        .formulario-avaliacao input:focus,
+        .formulario-avaliacao textarea:focus {
+            border-color: #6f4e37;
+
+            box-shadow: 0 0 8px rgba(111, 78, 55, 0.2);
+        }
+
+
+        /* Comentário */
+
+        .formulario-avaliacao textarea {
+            height: 120px;
+
+            resize: none;
+        }
+
+
+        /* Estrelas */
+
+        .estrelas-input {
+            display: flex;
+
+            justify-content: center;
+
+            gap: 8px;
+
+            margin: 15px 0;
+        }
+
+        .estrelas-input span {
+            font-size: 30px;
+
+            color: rgb(225, 225, 225);
+
+            cursor: pointer;
+
+            transition: 0.2s;
+        }
+
+
+        /* Aumenta a estrela quando passa o mouse */
+
+        .estrelas-input span:hover {
+            transform: scale(1.2);
+        }
+
+
+        /* Estrelas selecionadas */
+
+        .estrelas-input span.selecionada {
+            color: #ffea00;
+
+            text-shadow: 0 2px 5px rgba(180, 120, 0, 0.25);
+        }
+
+
+        /* Texto da nota */
+
+        #nota {
+            text-align: center;
+
+            color: #765a45;
+
+            font-size: 14px;
+
+            min-height: 20px;
+
+            line-height: 1.5;
+        }
+
+
+        /* Botão */
+
+        .formulario-avaliacao button {
+            width: 100%;
+
+            margin-top: 25px;
+
+            padding: 14px;
+
+            border: none;
+
+            border-radius: 12px;
+
+            background: rgb(73, 38, 0);
+
+            color: rgb(255, 243, 230);
+
+            font-size: 17px;
+
+            font-weight: bold;
+
+            cursor: pointer;
+
+            transition: 0.3s;
+        }
+
+
+        /* Hover do botão */
+
+        .formulario-avaliacao button:hover {
+            background: rgb(73, 38, 0);
+
+            transform: translateY(-2px);
+
+            box-shadow: 0 5px 12px rgba(75, 46, 31, 0.3);
+        }
+
+
+        /* Mensagem */
+
+        #mensagem {
+            text-align: center;
+
+            color: #4d7c43;
+
+            font-weight: bold;
+
+            margin-top: 15px;
+        }
+
+
+        /* Avaliações dos clientes */
+
+        .avaliacoes {
+            padding: 60px 20px;
+
+            background-color: rgb(255, 243, 230);
+
+            text-align: center;
+        }
+
+        .avaliacoes h2 {
+            color: #4b2e1f;
+
+            font-size: 32px;
+
+            margin-bottom: 35px;
+        }
+
+        .avaliacoes-container {
+            display: flex;
+
+            justify-content: center;
+
+            gap: 25px;
+
+            flex-wrap: wrap;
+        }
+
+        .avaliacao {
+            background-color: rgb(73, 38, 0);
+
+            width: 280px;
+
+            padding: 25px;
+
+            border-radius: 20px;
+
+            box-shadow: 0 5px 15px rgb(255, 243, 230);
+
+            transition: 0.3s;
+        }
+
+        .avaliacao:hover {
+            transform: translateY(-8px);
+
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+        }
+
+        .estrelas {
+            color: #ffea00;
+
+            font-size: 25px;
+
+            letter-spacing: 3px;
+
+            margin-bottom: 15px;
+        }
+
+        .avaliacao p {
+            color: rgb(255, 243, 230);
+
+            font-size: 17px;
+
+            line-height: 1.5;
+        }
+
+        .avaliacao h3 {
+            color: rgb(255, 243, 230);
+
+            font-size: 16px;
+
+            margin-top: 20px;
+        }
+
+    </style>
+
+</head>
+
+
+<body>
+
+
+    <!-- Avaliações dos clientes -->
+
+    <section class="avaliacoes">
+
+        <h2><i class="fa-solid fa-mug-hot"></i> O que nossos clientes dizem</h2>
+
+        <div class="avaliacoes-container">
+
+            <div class="avaliacao">
+
+                <div class="estrelas">★★★★★</div>
+
+                <p>
+                    "Um dos melhores cafés que já tomei!"
+                </p>
+
+                <h3>— Ana Silva</h3>
+
+            </div>
+
+
+            <div class="avaliacao">
+
+                <div class="estrelas">★★★★★</div>
+
+                <p>
+                    "Ambiente aconchegante e atendimento excelente."
+                </p>
+
+                <h3>— João Pedro</h3>
+
+            </div>
+
+
+            <div class="avaliacao">
+
+                <div class="estrelas">★★★★☆</div>
+
+                <p>
+                    "Adorei as sobremesas! Voltarei com certeza."
+                </p>
+
+                <h3>— Maria Clara</h3>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- Área para enviar avaliação -->
+
+    <section class="area-avaliacao">
+
+
+        <div class="titulo-avaliacao">
+
+            <span>
+                <i class="fa-solid fa-coffee-beans"></i>
+            </span>
+
+            <h2><i class="fa-solid fa-comment"></i> Conte para nós da sua experiência!</h2>
+
+            <p>
+                Gostou do nosso café? Deixe sua avaliação!
+            </p>
+
+        </div>
+
+
+        <div class="formulario-avaliacao">
+
+
+            <!-- Nome -->
+
+            <label for="nome">
+                Seu nome
+            </label>
+
+            <input
+                type="text"
+                id="nome"
+                placeholder="Digite seu nome"
+            >
+
+
+            <!-- Nota -->
+
+            <label>
+                Como você avalia nosso café?
+            </label>
+
+
+            <div class="estrelas-input">
+
+                <span data-valor="1"><i class="fa-solid fa-mug-hot"></i></span>
+
+                <span data-valor="2"><i class="fa-solid fa-mug-hot"></i></span>
+
+                <span data-valor="3"><i class="fa-solid fa-mug-hot"></i></span>
+
+                <span data-valor="4"><i class="fa-solid fa-mug-hot"></i></span>
+
+                <span data-valor="5"><i class="fa-solid fa-mug-hot"></i></span>
+
+            </div>
+
+
+            <!-- Texto da nota -->
+
+            <p id="nota">
+                Escolha uma nota
+            </p>
+
+
+            <!-- Comentário -->
+
+            <label for="comentario">
+                Seu comentário
+            </label>
+
+            <textarea
+                id="comentario"
+                placeholder="Avalie com carinho!"
+            ></textarea>
+
+
+            <!-- Botão -->
+
+            <button onclick="enviarAvaliacao()">
+
+                <i class="fa-solid fa-coffee-beans"></i>
+
+                Enviar avaliação
+
+            </button>
+
+
+            <!-- Mensagem -->
+
+            <p id="mensagem"></p>
+
+
+        </div>
+
+    </section>
+
+
+    <script>
+
+
+        /* Seleciona todas as estrelas */
+
+        const estrelas = document.querySelectorAll(".estrelas-input span");
+
+        let notaSelecionada = 0;
+
+
+        /* Quando passar o mouse sobre uma estrela */
+
+        estrelas.forEach(estrela => {
+
+            estrela.addEventListener("mouseenter", function() {
+
+                const valor = Number(this.dataset.valor);
+
+
+                estrelas.forEach(e => {
+
+                    if (Number(e.dataset.valor) <= valor) {
+
+                        e.classList.add("selecionada");
+
+                    } else {
+
+                        e.classList.remove("selecionada");
+
+                    }
+
+                });
+
+            });
+
+
+            /* Quando tirar o mouse */
+
+            estrela.addEventListener("mouseleave", function() {
+
+                estrelas.forEach(e => {
+
+                    if (Number(e.dataset.valor) <= notaSelecionada) {
+
+                        e.classList.add("selecionada");
+
+                    } else {
+
+                        e.classList.remove("selecionada");
+
+                    }
+
+                });
+
+            });
+
+
+            /* Quando clicar em uma estrela */
+
+            estrela.addEventListener("click", function() {
+
+                notaSelecionada = Number(this.dataset.valor);
+
+
+                estrelas.forEach(e => {
+
+                    if (Number(e.dataset.valor) <= notaSelecionada) {
+
+                        e.classList.add("selecionada");
+
+                    } else {
+
+                        e.classList.remove("selecionada");
+
+                    }
+
+                });
+
+
+                /* Mensagem de acordo com a nota */
+
+                if (notaSelecionada === 1) {
+
+                    document.getElementById("nota").innerHTML =
+                         "Perdoe-nos pela experiência, faremos o possível para melhorar! ☕";
+                       
+
+                }
+
+                else if (notaSelecionada === 2) {
+
+                    document.getElementById("nota").innerHTML =
+                        "Perdoe-nos pela experiência, faremos o possível para melhorar! ☕";
+
+                }
+
+                else {
+
+                    document.getElementById("nota").innerHTML =
+                        "Obrigado pela sua avaliação! ☕🤎";
+
+                }
+
+            });
+
+        });
+
+
+        /* Enviar avaliação */
+
+        function enviarAvaliacao() {
+
+
+            const nome =
+                document.getElementById("nome").value.trim();
+
+
+            const comentario =
+                document.getElementById("comentario").value.trim();
+
+
+            const mensagem =
+                document.getElementById("mensagem");
+
+
+            /* Verificação */
+
+            if (
+                nome === "" ||
+                comentario === "" ||
+                notaSelecionada === 0
+            ) {
+
+                mensagem.style.color = "#b33a3a";
+
+                mensagem.textContent =
+                    "Por favor, preencha todos os campos e escolha uma nota. ☕";
+
+                return;
+
+            }
+
+
+            /* Mensagem de sucesso */
+
+            mensagem.style.color = "#4d7c43";
+
+            mensagem.textContent =
+                "Obrigado pela sua avaliação, " + nome + "! ☕🤎";
+
+
+            /* Limpar formulário */
+
+            document.getElementById("nome").value = "";
+
+            document.getElementById("comentario").value = "";
+
+
+            notaSelecionada = 0;
+
+
+            estrelas.forEach(e => {
+
+                e.classList.remove("selecionada");
+
+            });
+
+
+            document.getElementById("nota").textContent =
+                "Escolha uma nota";
+
+
+        }
+
+    </script>
+
+
+</body>
+
+</html>
